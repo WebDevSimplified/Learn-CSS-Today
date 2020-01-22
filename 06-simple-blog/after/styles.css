@@ -1,0 +1,20 @@
+header, #footer {
+  background-color: purple;
+}
+
+.header-text, #footer {
+  color: white;
+  text-align: center;
+}
+
+.article-title {
+  font-family: Arial;
+}
+
+.article-date {
+  font-style: italic;
+}
+
+.article-author, .article-date {
+  color: grey;
+}
