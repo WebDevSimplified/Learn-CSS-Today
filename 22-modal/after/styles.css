@@ -3,45 +3,47 @@
 }
 
 body {
-  margin: 0;
   display: flex;
   justify-content: center;
   align-items: center;
-  min-height: 100vh;
+  height: 100vh;
+  margin: 0;
   background-color: #555;
 }
 
 .modal {
-  background-color: white;
-  max-width: 80%;
   height: 80vh;
   width: 900px;
+  max-width: 80%;
+  background-color: white;
   border-radius: 8px;
   display: flex;
   flex-direction: column;
 }
 
 .header {
-  border-bottom: 1px solid #777;
   padding: 0 1rem;
+  border-bottom: 1px solid #777;
   padding-bottom: .5rem;
   display: flex;
   justify-content: space-between;
 }
 
 .title {
-  padding-top: 1rem;
   font-size: 1.5rem;
+  padding-top: 1rem;
 }
 
 .close-button {
   background: none;
   border: none;
-  font-weight: bold;
   font-size: 1.5rem;
-  padding: 0;
+  font-weight: bold;
   margin: 0;
+  padding: 0;
   cursor: pointer;
+  align-self: flex-start;
+  padding-top: .5rem;
 }
 
 .body {
@@ -51,10 +53,10 @@ body {
 }
 
 .footer {
-  border-top: 1px solid #777;
-  padding: .5rem;
   display: flex;
   justify-content: flex-end;
+  padding: .5rem;
+  border-top: 1px solid #777;
 }
 
 .footer .btn {
@@ -66,7 +68,7 @@ body {
 }
 
 .btn {
-  padding: .5rem 1rem;
+  padding: .5em 1em;
   font-size: inherit;
   border-radius: .3em;
   border: none;
@@ -78,7 +80,8 @@ body {
   background-color: #1CA;
 }
 
-.btn.btn-primary:hover {
+.btn.btn-primary:hover,
+.btn.btn-primary:focus {
   background-color: #0A8;
 }
 
@@ -86,6 +89,7 @@ body {
   background-color: #C33;
 }
 
-.btn.btn-danger:hover {
+.btn.btn-danger:hover,
+.btn.btn-danger:focus {
   background-color: #A11;
 }
