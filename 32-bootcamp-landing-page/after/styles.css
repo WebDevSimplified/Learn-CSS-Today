@@ -9,7 +9,7 @@ body {
 }
 
 .full-screen-header {
-  min-height: 100vh;
+  height: 100vh;
   background-image: url('img/header_image.jpg');
   background-size: cover;
   background-position-x: 40%;
@@ -20,16 +20,16 @@ body {
   justify-content: center;
   align-items: center;
 
-  position: relative;
   color: white;
+  position: relative;
 }
 
 .nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: .5rem 1rem;
   background-color: #1B2522;
+  padding: .5rem 1rem;
 }
 
 .nav-top {
@@ -48,7 +48,7 @@ body {
   margin: 0;
   padding: 0;
   display: flex;
-  list-style: none;
+  list-style-type: none;
 }
 
 .nav-list a {
@@ -62,8 +62,8 @@ body {
 }
 
 .title {
-  margin: 0;
   font-size: 3rem;
+  margin: 0;
 }
 
 .sub-title {
@@ -73,13 +73,14 @@ body {
 }
 
 .btn {
-  border-radius: 1000px;
   background-color: hsl(200, 100%, 50%);
-  padding: .25rem 1rem;
   color: white;
+  border-radius: 10000px;
+  padding: .25em 1em;
   text-decoration: none;
-  cursor: pointer;
   border: none;
+  cursor: pointer;
+  font-size: inherit;
 }
 
 .btn:hover,
@@ -125,22 +126,22 @@ body {
 
 .section-accent {
   background-color: #0AF;
+  padding: 1.5rem;
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 1.5rem;
 }
 
 .free-title {
-  font-size: 2.5rem;
-  margin: 0;
-  text-transform: uppercase;
   color: white;
+  margin: 0;
+  font-size: 2.5rem;
+  text-transform: uppercase;
 }
 
 .free-sub-title {
-  max-width: 300px;
   color: white;
+  max-width: 300px;
 }
 
 .form {
@@ -163,6 +164,7 @@ body {
   border-radius: .3em;
   padding: .5em;
   color: inherit;
+  font-family: inherit;
 }
 
 .form textarea {
