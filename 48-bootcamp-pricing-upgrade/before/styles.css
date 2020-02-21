@@ -1,0 +1,187 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Cambria;
+  color: #1B2522;
+}
+
+.full-screen-header {
+  height: 100vh;
+  background-image: url('img/header_image.jpg');
+  background-size: cover;
+  background-position-x: 40%;
+  background-position-y: center;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  color: white;
+  position: relative;
+}
+
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #1B2522;
+  padding: .5rem 1rem;
+}
+
+.nav-top {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1;
+}
+
+.logo {
+  width: 50px;
+}
+
+.nav-list {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  list-style-type: none;
+}
+
+.nav-list a {
+  text-decoration: none;
+  margin-left: 1rem;
+  color: white;
+}
+
+.nav-list a:hover {
+  color: #CCC;
+}
+
+.title {
+  font-size: 3rem;
+  margin: 0;
+}
+
+.sub-title {
+  font-size: 1.5rem;
+  margin-top: .3rem;
+  margin-bottom: 1rem;
+}
+
+.btn {
+  background-color: hsl(200, 100%, 50%);
+  color: white;
+  border-radius: 10000px;
+  padding: .25em 1em;
+  text-decoration: none;
+  border: none;
+  cursor: pointer;
+  font-size: inherit;
+}
+
+.btn:hover,
+.btn:focus {
+  background-color: hsl(200, 100%, 40%);
+}
+
+.scroll-down-icon {
+  position: absolute;
+  bottom: 1rem;
+  width: 30px;
+}
+
+.section {
+  padding: 2rem;
+}
+
+.section-title {
+  margin: 0;
+  margin-bottom: 2rem;
+  font-size: 2rem;
+  text-align: center;
+  color: black;
+}
+
+.curriculum-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(auto, 450px));
+  justify-content: center;
+  row-gap: 10px;
+  column-gap: 50px;
+}
+
+.curriculum-grid-item {
+  display: flex;
+  align-items: center;
+}
+
+.curriculum-grid-item img {
+  width: 50px;
+  margin-right: 1rem;
+}
+
+.section-accent {
+  background-color: #0AF;
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.free-title {
+  color: white;
+  margin: 0;
+  font-size: 2.5rem;
+  text-transform: uppercase;
+}
+
+.free-sub-title {
+  color: white;
+  max-width: 300px;
+}
+
+.form {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.form label {
+  color: black;
+  font-weight: bold;
+}
+
+.form input,
+.form textarea {
+  width: 100%;
+  margin-top: .25rem;
+  margin-bottom: .75rem;
+  outline: none;
+  border: 1px solid #1B2522;
+  border-radius: .3em;
+  padding: .5em;
+  color: inherit;
+  font-family: inherit;
+}
+
+.form textarea {
+  resize: vertical;
+  min-height: 75px;
+  max-height: 200px;
+}
+
+.form input:focus,
+.form textarea:focus {
+  border-color: #0AF;
+}
+
+.btn-container {
+  text-align: end;
+}
+
+.btn-square {
+  border-radius: .3em;
+}
