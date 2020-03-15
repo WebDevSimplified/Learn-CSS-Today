@@ -1,0 +1,93 @@
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  margin: 0;
+}
+
+.btn {
+  background-color: hsl(200, 100%, 50%);
+  border: none;
+  outline: none;
+  color: white;
+  padding: .5em 1em;
+  border-radius: .3em;
+  cursor: pointer;
+  position: relative;
+}
+
+.btn-load:focus::after {
+  --default-transform: translateY(200%);
+
+  content: 'Loading';
+  position: absolute;
+  color: black;
+  transform: var(--default-transform);
+  transform-origin: center;
+  left: 0;
+  bottom: 0;
+  animation: loading 2s linear forwards;
+}
+
+@keyframes loading {
+  0% {
+    opacity: 1;
+  }
+
+  10% {
+    content: 'Loading.';
+  }
+
+  20% {
+    content: 'Loading..';
+  }
+
+  25% {
+    transform: var(--default-transform) rotate(30deg);
+  }
+
+  30% {
+    content: 'Loading...';
+  }
+  
+  40% {
+    content: 'Loading..';
+  }
+  
+  50% {
+    content: 'Loading.';
+    opacity: .6;
+    transform: var(--default-transform) rotate(0);
+  }
+  
+  60% {
+    content: 'Loading';
+  }
+  
+  70% {
+    content: 'Loading.';
+  }
+
+  75% {
+    transform: var(--default-transform) rotate(-30deg);
+  }
+  
+  80% {
+    content: 'Loading..';
+  }
+
+  90% {
+    content: 'Loading...';
+  }
+
+  100% {
+    content: 'Loaded';
+    opacity: 1;
+    transform: var(--default-transform) rotate(0);
+  }
+}

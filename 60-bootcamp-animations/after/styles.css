@@ -6,6 +6,17 @@ body {
   margin: 0;
   font-family: Montserrat, sans-serif;
   color: #1B2522;
+
+  --title-duration: 500ms;
+  --sub-title-duration: 500ms;
+  --nav-duration: 200ms;
+  --btn-grow-duration: 200ms;
+  --scroll-down-duration: 200ms;
+
+  --sub-title-delay: calc(var(--title-duration) - 200ms);
+  --nav-delay: calc(var(--sub-title-delay) + var(--sub-title-duration));
+  --btn-grow-delay: var(--nav-delay);
+  --scroll-down-delay: var(--nav-delay);
 }
 
 .full-screen-header {
@@ -22,6 +33,7 @@ body {
 
   color: white;
   position: relative;
+  overflow: hidden;
 }
 
 .nav {
@@ -38,6 +50,8 @@ body {
   left: 0;
   right: 0;
   z-index: 1;
+
+  animation: nav-enter var(--nav-duration) var(--nav-delay) backwards;
 }
 
 .logo {
@@ -55,6 +69,8 @@ body {
   text-decoration: none;
   margin-left: 1rem;
   color: white;
+
+  transition: color 100ms;
 }
 
 .nav-list a:hover {
@@ -64,12 +80,16 @@ body {
 .title {
   font-size: 3rem;
   margin: 0;
+
+  animation: title-enter var(--title-duration);
 }
 
 .sub-title {
   font-size: 1.5rem;
   margin-top: .3rem;
   margin-bottom: 1rem;
+
+  animation: sub-title-enter var(--sub-title-duration) var(--sub-title-delay) backwards;
 }
 
 .btn {
@@ -81,6 +101,8 @@ body {
   border: none;
   cursor: pointer;
   font-size: inherit;
+  
+  transition: 100ms;
 }
 
 .btn:hover,
@@ -92,6 +114,10 @@ body {
   position: absolute;
   bottom: 1rem;
   width: 30px;
+
+  animation:
+    scroll-down-bounce calc(var(--scroll-down-duration) + var(--scroll-down-delay)) 1s alternate infinite linear,
+    scroll-down-enter var(--scroll-down-duration) var(--scroll-down-delay) backwards;
 }
 
 .section {
@@ -117,6 +143,10 @@ body {
 .curriculum-grid-item {
   display: flex;
   align-items: center;
+}
+
+.curriculum-grid-item:hover img {
+  animation: shake 100ms;
 }
 
 .curriculum-grid-item img {
@@ -149,6 +179,8 @@ body {
   padding: .5em;
   color: inherit;
   font-family: inherit;
+
+  transition: border-color 100ms;
 }
 
 .form textarea {
@@ -184,6 +216,12 @@ body {
   border: 1px solid black;
   border-radius: .3em;
   margin: 1rem 0;
+
+  transition: transform 100ms;
+}
+
+.pricing-card:hover {
+  transform: scale(1.05);
 }
 
 .pricing-card.accent {
@@ -195,12 +233,14 @@ body {
   border-top-right-radius: 0;
   border-bottom-right-radius: 0;
   border-right: none;
+  transform-origin: right;
 }
 
 .pricing-card:last-child {
   border-top-left-radius: 0;
   border-bottom-left-radius: 0;
   border-left: none;
+  transform-origin: left;
 }
 
 .price-header {
@@ -237,6 +277,67 @@ body {
   margin-bottom: 0;
 }
 
+
+.btn-grow {
+  animation: btn-grow-enter var(--btn-grow-duration) var(--btn-grow-delay) backwards;
+}
+
+.btn-grow:hover {
+  transform: scale(1.1);
+  box-shadow: 0 2px 5px 1px black;
+}
+
+
+@keyframes scroll-down-bounce {
+  from {
+    transform: translateY(0);
+  }
+
+  to {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes shake {
+  25% {
+    transform: rotate(5deg);
+  }
+
+  75% {
+    transform: rotate(-5deg);
+  }
+}
+
+@keyframes title-enter {
+  from {
+    transform: translateX(-100vw);
+  }
+}
+
+@keyframes sub-title-enter {
+  from {
+    transform: translateX(100vw);
+  }
+}
+
+@keyframes nav-enter {
+  from {
+    transform: translateY(-100%);
+  }
+}
+
+@keyframes btn-grow-enter {
+  from {
+    transform: scale(0);
+  }
+}
+
+@keyframes scroll-down-enter {
+  from {
+    transform: scale(0) rotate(180deg);
+  }
+}
+
 @media (max-width: 700px) {
   .curriculum-grid {
     grid-template-columns: minmax(auto, 450px);
@@ -263,6 +364,7 @@ body {
     border-radius: .3em;
     border-right: 1px solid black;
     border-left: 1px solid black;
+    transform-origin: center;
   }
 
   .pricing-card:last-child {
